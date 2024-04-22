@@ -1,0 +1,77 @@
+  
+  <div class="rainbow-background">
+    <div class="ray"></div>
+    <div class="ray"></div>
+    <div class="ray"></div>
+    <div class="ray"></div>
+    <div class="ray"></div>
+    <div class="ray"></div>
+    <div class="ray"></div>
+  </div>
+
+<div class="container">
+
+  <div class="drawingContainer">
+    <div class="toolbar">
+      <div class="toolbarItem">
+        <input type="color" id="colorpicker" value="#c81464" class="colorpicker">
+      </div>
+      <div class="toolbarItem">
+        <input type="range" min="1" max="50" value="5" step="1" id="controlSize">
+      </div>
+      <div class="toolbarItem">
+        <input type="button" id="undo" value="Undo" class="undo">
+      </div>
+      <div class="toolbarItem">
+        <input type="button" id="reset" value="Erase" class="reset">
+      </div>
+      <div class="toolbarItem">
+        <input type="button" id="fill" value="Fill" class="fill">
+      </div>
+      <div class="toolbarItem">
+        <input type="button" id="save" value="Save" class="save">
+      </div>
+    </div>
+    <div class="canvas">
+      <canvas id="canvas" width="800" height="600"></canvas>
+    </div>
+    <div class="parts">
+      <div class="partItem">
+        <input type="button" id="head" value="Head" class="part">
+      </div>
+      <div class="partItem">
+        <input type="button" id="body" value="Body" class="part">
+      </div>
+      <div class="partItem">
+        <input type="button" id="legs" value="Legs" class="part">
+      </div>
+    </div>
+  </div>
+
+  <div class="spinner">
+    <div style="background-color: white;"></div>
+    <div style="background-color: white;"></div>
+    <div style="background-color: white;"></div>
+    <div style="background-color: white;"></div>
+    <div style="background-color: white;"></div>
+    <div style="background-color: white;"></div>
+  </div>
+
+
+  <div class="displayContainer">
+    <div class="displayItem" part="head">
+      <img width="390px"  class="head_img" height="300px" src="<%= @head %>" alt="head">
+    </div>
+    <div class="displayItem" part="body">
+      <img width="390px" class="body_img" height="300px" src="<%= @body %>" alt="body">
+    </div>
+    <div class="displayItem" part="legs">
+      <img width="390px"  class="legs_img" height="300px" src="<%= @legs %>" alt="legs">
+    </div>
+  </div>
+</div>
+
+<script>
+
+  
+</script>

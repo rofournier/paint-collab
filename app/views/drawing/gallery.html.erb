@@ -1,0 +1,11 @@
+<div class="gallery-container">
+<% @drawings.each do |drawing| %>
+  <div class="gallery-item">
+    <%= link_to("/remove/#{drawing.id}", method: :get, data: { confirm: "Are you sure?" }, class: "drawing-link") do %>
+    <img src="<%= drawing.image %>" alt="super image" width="150px" height="125px">
+    <% end %>
+  </div>
+<% end %>
+</div>
+<script>
+</script>

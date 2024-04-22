@@ -1,0 +1,285 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background: #ffe259;
+  background: #f12711;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f5af19, #f12711);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.rainbow-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.rainbow-background .ray {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 40px;
+  transform: skewY(-35deg);
+  width: 100vw;
+}
+
+.rainbow-background .ray:nth-child(1) {
+  background-color: red;
+  bottom: 0;
+}
+
+.rainbow-background .ray:nth-child(2) {
+  background-color: orange;
+  bottom: 40px;
+}
+
+.rainbow-background .ray:nth-child(3) {
+  background-color: yellow;
+  bottom: 80px;
+}
+
+.rainbow-background .ray:nth-child(4) {
+  background-color: green;
+  bottom: 120px;
+}
+
+.rainbow-background .ray:nth-child(5) {
+  background-color: blue;
+  bottom: 160px;
+}
+
+.rainbow-background .ray:nth-child(6) {
+  background-color: indigo;
+  bottom: 200px;
+}
+
+.rainbow-background .ray:nth-child(7) {
+  background-color: violet;
+  bottom: 240px;
+}
+
+
+
+/* Draw section */
+
+canvas {
+  border-radius: 1%;
+}
+
+.canvas,
+.displayItem,
+.partItem,
+.toolbar {
+  z-index: 10 !important;
+}
+
+.head_img {
+  border-top-left-radius: 2%;
+  border-top-right-radius: 2%;
+}
+
+.body_img {}
+
+.legs_img {
+  border-bottom-left-radius: 2%;
+  border-bottom-right-radius: 2%;
+}
+
+.drawingContainer {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.parts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolbar {
+  display: flex;
+  width: 650px;
+  height: 50px;
+  margin-bottom: 3px;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 2%;
+
+}
+
+.toolbarItem {
+  margin-right: 3px;
+}
+
+
+/* Display section section */
+
+.displayContainer {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.displayItem {
+  margin-bottom: -2px;
+  margin-top: -2px;
+  transition: transform .2s;
+  /* Animation */
+
+}
+
+
+.displayItem:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+/* Gallery */
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  margin: 10px;
+  border-radius: 2%;
+}
+
+.gallery-item:hover {
+  cursor: pointer;
+  background-image: linear-gradient(45deg,
+      purple,
+      red,
+      orange,
+      yellow,
+      green,
+      yellow);
+}
+
+
+
+.spinner {
+  width: 70.4px;
+  height: 70.4px;
+  --clr: rgb(8, 8, 8);
+  --clr-alpha: rgb(247, 197, 159, .1);
+  animation: spinner 3.5s infinite ease;
+  transform-style: preserve-3d;
+}
+
+.spinner :nth-child(1) {
+  background-image: url("d1.png");
+}
+
+.spinner :nth-child(2) {
+  background-image: url("d2.png");
+}
+
+.spinner :nth-child(3) {
+  background-image: url("d3.png");
+}
+
+.spinner :nth-child(4) {
+  background-image: url("d4.png");
+}
+
+.spinner :nth-child(5) {
+  background-image: url("d5.png");
+}
+
+.spinner :nth-child(6) {
+  background-image: url("d6.png");
+}
+
+.spinner :hover {
+  cursor: pointer;
+}
+
+
+
+.spinner>div {
+  background-color: var(--clr-alpha);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  border: 3.5px solid var(--clr);
+}
+
+.spinner div:nth-of-type(1) {
+  transform: translateZ(-35.2px) rotateY(180deg);
+}
+
+.spinner div:nth-of-type(2) {
+  transform: rotateY(-270deg) translateX(50%);
+  transform-origin: top right;
+}
+
+.spinner div:nth-of-type(3) {
+  transform: rotateY(270deg) translateX(-50%);
+  transform-origin: center left;
+}
+
+.spinner div:nth-of-type(4) {
+  transform: rotateX(90deg) translateY(-50%);
+  transform-origin: top center;
+}
+
+.spinner div:nth-of-type(5) {
+  transform: rotateX(-90deg) translateY(50%);
+  transform-origin: bottom center;
+}
+
+.spinner div:nth-of-type(6) {
+  transform: translateZ(35.2px);
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+  }
+
+  50% {
+    transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+  }
+
+  100% {
+    transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+  }
+}
